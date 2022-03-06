@@ -18,3 +18,6 @@
 # Registeration invitation link
 - If u want to play (be aware it's risky), u can use [my invitation link](https://www.bibox360.com/zh/login/register?invite_code=0FIel4) to register and take a try.  
 - Note about risk again!
+
+# Api key
+- After registeration, u can get the api key from this page [bibox api](https://www.bibox.com/en/account/center/api)
