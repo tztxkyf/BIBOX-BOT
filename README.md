@@ -5,7 +5,7 @@
 
 # Risk Notice
 - Use at your own risk.  
-- There is risk from platform itself.  
+- There is risk from platform itself(e.g. bankruptcy, being hacked, etc).  
 - Investment in Cryptocurrency (including but not limited to BTC, USDT, ETH, etc) are highly risky.  
 
 # Files
