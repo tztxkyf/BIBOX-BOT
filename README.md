@@ -10,7 +10,7 @@
 
 # Files
 - [bibox_utils.py](https://github.com/tztxkyf/BIBOX-BOT/blob/main/bibox_utils.py) contains some useful functions, like requesting k-line, checking account details, add order, cancel order, etc.  
-- [strategy1.py](https://github.com/tztxkyf/BIBOX-BOT/blob/main/strategy1.py) is a sample strategy showing usage of the functions.  
+- [strategy1.py](https://github.com/tztxkyf/BIBOX-BOT/blob/main/strategy1.py) is a sample strategy showing usage of the functions. There is no guarantee this sample can help u earn money.  
 
 # Dependency
 - See imports. It's simple so I did not prepare requirements file.  
