@@ -240,7 +240,7 @@ def dump_data(pair="BTC_USDT", period="15min", size=20, outfile = "", ma_period 
             sma = statistics.mean(c[max(i-ma_period+1, 0):i+1])
             std = sma*0.05
             if (i > 0):
-                ret = c[i]/c[i-1]-1
+                ret = math.log(c[i]/c[i-1]) # log return
             if (i > 9):
                 std = statistics.stdev(c[max(i-ma_period+1, 0):i+1])
             bow_l = sma - 2*std
