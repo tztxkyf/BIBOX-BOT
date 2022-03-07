@@ -223,3 +223,27 @@ def round_size(x, n = 4):
 
 def round_price(x, n = 1):
     return round(x, n)
+
+def dump_data(pair="BTC_USDT", period="15min", size=20, outfile = "", ma_period = 20):
+    # 查k线并下载数据
+    # period can be '1min', '3min', '5min', '15min', '30min', '1hour', '2hour', '4hour', '6hour', '12hour', 'day', 'week'
+    r = request_kline(pair, period, size)
+    if (outfile == ""):
+        outfile = "dump.%s.%s.%d.csv" % (pair, period, size)
+    (t, o, h, l, c, v) = get_values(r)
+    with open(outfile, "w") as output:
+        output.write("datetime,open,high,low,close,adjclose,volume,ret, sma,bow_l,bow_h\n")
+        for (t0, o0, h0, l0, c0, v0) in zip(t, o, h, l, c, v):
+            i = t.index(t0)
+            # print(i, t0)
+            ret = 0
+            sma = statistics.mean(c[max(i-ma_period+1, 0):i+1])
+            std = sma*0.05
+            if (i > 0):
+                ret = c[i]/c[i-1]-1
+            if (i > 9):
+                statistics.stdev(c[max(i-ma_period+1, 0):i+1])
+            bow_l = sma - 2*std
+            bow_h = sma + 2*std
+            output.write("%s,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f\n" % (str(t0), o0, h0, l0, c0, c0, v0, ret, sma, bow_l, bow_h))
+    print(outfile, "done")
