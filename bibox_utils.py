@@ -242,7 +242,7 @@ def dump_data(pair="BTC_USDT", period="15min", size=20, outfile = "", ma_period 
             if (i > 0):
                 ret = c[i]/c[i-1]-1
             if (i > 9):
-                statistics.stdev(c[max(i-ma_period+1, 0):i+1])
+                std = statistics.stdev(c[max(i-ma_period+1, 0):i+1])
             bow_l = sma - 2*std
             bow_h = sma + 2*std
             output.write("%s,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f\n" % (str(t0), o0, h0, l0, c0, c0, v0, ret, sma, bow_l, bow_h))
